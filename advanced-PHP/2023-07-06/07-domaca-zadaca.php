@@ -57,3 +57,5 @@ $odjel->dodajZaposlenika($zp2);
 $odjel->dodajZaposlenika($zp3);
 
 $odjel->prikaziDetalje();
+
+?>
