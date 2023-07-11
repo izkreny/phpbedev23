@@ -8,7 +8,7 @@ try
     // https://www.php.net/manual/en/regexp.reference.escape.php
     $filterBroj = preg_replace('/\D/', '', $brojTel);
 
-    if (strval($filterBroj) >= 6) {
+    if (strlen($filterBroj) >= 6) {
         echo "Broj je ispravan: " . $filterBroj . "\n";
     } else {
         throw new Exception ("Nešto nije u redu s brojem telefona!\n");
