@@ -5,6 +5,7 @@ $brojTel = "+012-345-Alo-Alo";
 try
 {
     // https://www.php.net/manual/en/function.preg-replace.php
+    // https://www.php.net/manual/en/regexp.reference.escape.php
     $filterBroj = preg_replace('/\D/', '', $brojTel);
 
     if (strlen(strval($filterBroj)) >= 6) {
