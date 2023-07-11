@@ -1,14 +1,13 @@
 <?php
 
-$brojTel = "123456AloAlo";
+$brojTel = "+012-345-Alo-Alo";
 
 try
 {
-    // https://www.php.net/manual/en/function.filter-var.php
-    // Returns the filtered data, or false if the filter fails.
-    $filterBroj = filter_var($brojTel, FILTER_SANITIZE_NUMBER_INT);
+    // https://www.php.net/manual/en/function.preg-replace.php
+    $filterBroj = preg_replace('/\D/', '', $brojTel);
 
-    if (($filterBroj !== false) AND (strlen(strval($filterBroj)) <= 6)) {
+    if (strlen(strval($filterBroj)) >= 6) {
         echo "Broj je ispravan: " . $filterBroj . "\n";
     } else {
         throw new Exception ("Nešto nije u redu s brojem telefona!\n");
