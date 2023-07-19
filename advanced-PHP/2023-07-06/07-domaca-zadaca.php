@@ -24,7 +24,7 @@ class Zaposlenik
 class Odjel
 {
     private $naziv;
-    private $zaposlenici = array();
+    private $zaposlenici = [];
 
     public function __construct($naziv)
     {
@@ -39,8 +39,9 @@ class Odjel
     public function prikaziDetalje()
     {
         echo "U odjelu " . $this->naziv . " rade:\n";
-        foreach ($this->zaposlenici as $zaposlenik)
+        foreach ($this->zaposlenici as $zaposlenik) {
             echo $zaposlenik->prikaziDetalje();
+        }
     }
 }
 
