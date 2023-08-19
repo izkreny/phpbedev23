@@ -186,14 +186,15 @@ if (is_writable($file)) {
         } elseif (isset($_SESSION['active']) and isset($_POST['options'])) {
     ?>
             <form action="" method="POST">
-                <label><?php if(isset($form['labelText'])) echo $form['labelText'] ?></label>
+                <!-- Using https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op -->
+                <label><?= $form['labelText'] ?? '' ?></label>
                 <input 
-                    type="<?php if(isset($form['inputType'])) echo $form['inputType'] ?>" 
-                    name="<?php if(isset($form['inputName'])) echo $form['inputName'] ?>" 
-                    <?php if(isset($form['inputExtraAttributes'])) echo $form['inputExtraAttributes'] ?> />
+                    type="<?= $form['inputType'] ?? '' ?>" 
+                    name="<?= $form['inputName'] ?? '' ?>" 
+                    <?= $form['inputExtraAttributes'] ?? '' ?> />
                 <input 
                     type="submit" 
-                    value="<?php if(isset($form['inputButtonText'])) echo $form['inputButtonText'] ?>" />
+                    value="<?= $form['inputButtonText'] ?? '' ?>" />
             </form>
     <?php
         }
