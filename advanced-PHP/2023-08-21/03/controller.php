@@ -3,10 +3,13 @@
     include 'model.php';
     include 'view.php';
 
-    function prenesiZbroj($a, $b)
+    function obradiFormu()
     {
-        $zbroj = zbroji($a, $b);
-        prikaziZbroj($zbroj);
-    }
+        if (isset($_GET['a']) and (isset($_GET['b']))) {
+            $a = $_GET['a'];
+            $b = $_GET['b'];
 
-?>
+            $zbroj = zbroji($a, $b);
+            prikaziZbroj($zbroj);
+        }
+    }
