@@ -4,3 +4,4 @@
 
     prikaziFormu();
     obradiFormu();
+    prikaziSveBiljeske(dohvatiSveBiljeske());
