@@ -20,7 +20,7 @@
         {
             $querry = "SELECT * FROM ". $this->table;
             $stmt = $this->conn->prepare($querry);
-            $stmt = $this->execute();
+            $stmt->execute();
             
             return $stmt;
         }

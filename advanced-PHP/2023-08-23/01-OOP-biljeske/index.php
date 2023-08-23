@@ -14,6 +14,11 @@
 
     $view->prikaziFormu();
 
+    if (isset($_POST['naslov']) and (isset($_POST['sadrzaj']))) {
+        $naslov = $_POST['naslov'];
+        $sadrzaj = $_POST['sadrzaj'];
 
-    //obradiFormu();
-    //prikaziSveBiljeske(dohvatiSveBiljeske());
+        $controller->dodajBiljesku($naslov, $sadrzaj);
+    }
+
+    $controller->prikaziSveBiljeske();
