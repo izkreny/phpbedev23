@@ -1,9 +1,9 @@
 <?php
 
-    include_once 'controller.php';
-    include_once 'database.php';
-    include_once 'model.php';
-    include_once 'view.php';
+    include_once 'Controller.php';
+    include_once 'Database.php';
+    include_once 'Model.php';
+    include_once 'View.php';
 
     $database = new Database();
     $db = $database->connect();
