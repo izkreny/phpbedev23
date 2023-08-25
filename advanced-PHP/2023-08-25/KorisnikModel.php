@@ -14,11 +14,9 @@
 
         public function emailPostoji($email)
         {
-            // metoda mora vratiti ili istinu ili laž
-
             $querry = "SELECT email FROM ". $this->table;
             $stmt = $this->conn->prepare($querry);
-            $email = $stmt->execute()->fetchAll(PDO::FETCH_ASSOC);
+            $emails = $stmt->execute()->fetchAll(PDO::FETCH_ASSOC);
 
             return if_array($email, $emails, strict);
         }
