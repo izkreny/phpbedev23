@@ -16,7 +16,7 @@
         {
             // metoda mora vratiti ili istinu ili laž
 
-            $querry = "SELECT * FROM ". $this->table;
+            $querry = "SELECT email FROM ". $this->table;
             $stmt = $this->conn->prepare($querry);
             $email = $stmt->execute()->fetchAll(PDO::FETCH_ASSOC);
 
