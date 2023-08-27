@@ -6,8 +6,10 @@
         {
             echo '
                 <form method="post">
-                    <input type="text" name="naslov">
-                    <textarea name="sadrzaj"></textarea>
+                    <label>Naslov</label><br>
+                    <input type="text" name="naslov"><br>
+                    <label>Sadržaj</label><br>
+                    <textarea name="sadrzaj"></textarea><br>
                     <input type="submit" value="DODAJ BILJEŠKU">
                 </form>
             ';

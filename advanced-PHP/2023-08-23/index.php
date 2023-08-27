@@ -5,11 +5,11 @@
     include_once 'Model.php';
     include_once 'View.php';
 
-    $database = new Database();
+    $database = new Database('biljeske');
     $db = $database->connect();
 
-    $view = new BiljeskaView();
     $model = new Biljeska($db);
+    $view = new BiljeskaView();
     $controller = new BiljeskaController($model, $view);
 
     $view->prikaziFormu();

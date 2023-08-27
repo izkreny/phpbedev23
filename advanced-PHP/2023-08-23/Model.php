@@ -25,13 +25,12 @@
             return $stmt;
         }
 
-
         public function dodajBiljesku()
         {
             $this->naslov = htmlspecialchars(strip_tags($this->naslov));
             $this->sadrzaj = htmlspecialchars(strip_tags($this->sadrzaj));
             
-            $querry = "INSERT INTO " . $this->table . " (naslov, sadrzaj) VALUES (:naslov, :sadrzaj)";
+            $querry = "INSERT INTO {$this->table} (naslov, sadrzaj) VALUES (:naslov, :sadrzaj)";
             $stmt = $this->conn->prepare($querry);
 
             $stmt->bindParam(':naslov', $this->naslov);
