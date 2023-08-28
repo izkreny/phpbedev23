@@ -18,10 +18,8 @@
 
         public function prikaziPoruke()
         {
-            if ($this->poruke) {
-                foreach ($this->poruke as $poruka) {
-                    echo '<h3 style="color: red;">' . $poruka . '</h3>';
-                }
+            if (!empty($this->poruke)) {
+                $this->view->prikaziPoruke($this->poruke);
             }
         }
 
@@ -55,7 +53,7 @@
 
         private function provjeriEmail($email)
         {
-            if ($this->model->emailPostoji($email)) {
+            if ($this->model->postojiLi($email, 'email')) {
                 $this->poruke[] = "Email već postoji u sustavu!";
 
                 return false;
@@ -80,9 +78,6 @@
                 and $this->provjeriEmailFormat($email)
                 and $this->provjeriLozinke($lozinka, $ponovljena_lozinka) 
             ) {
-                // https://www.php.net/manual/en/function.random-bytes.php
-                // https://www.php.net/manual/en/function.bin2hex
-                $podaci['token'] = bin2hex(random_bytes(10));
                 unset($podaci['ponovljena_lozinka']);
                 
                 if ($this->model->dodajKorisnika($podaci)) {

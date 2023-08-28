@@ -12,25 +12,11 @@
             $this->conn = $db;
         }
 
-        public function emailPostoji($email)
+        public function postojiLi($string, $column)
         {
-            $querry = "SELECT email FROM {$this->table} WHERE email = ?";
+            $querry = "SELECT {$column} FROM {$this->table} WHERE {$column} = :string";
             $stmt = $this->conn->prepare($querry);
-            $stmt->bindParam(1, $email, PDO::PARAM_STR);
-            $stmt->execute();
-
-            if ($stmt->rowCount() > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        public function tokenPostoji($token)
-        {
-            $querry = "SELECT token FROM {$this->table} WHERE token = ?";
-            $stmt = $this->conn->prepare($querry);
-            $stmt->bindParam(1, $token, PDO::PARAM_STR);
+            $stmt->bindParam(':string', $string, PDO::PARAM_STR);
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -56,6 +42,14 @@
 
         public function dodajKorisnika($podaci)
         {
+            // https://www.php.net/manual/en/function.password-hash.php
+            $podaci['lozinka'] = password_hash($podaci['lozinka'], PASSWORD_DEFAULT);
+
+            // https://www.php.net/manual/en/function.random-bytes.php
+            // https://www.php.net/manual/en/function.bin2hex
+            $podaci['token'] = bin2hex(random_bytes(10));
+
+
             $podaci['ime'] = htmlspecialchars(strip_tags($podaci['ime']));
             $podaci['prezime'] = htmlspecialchars(strip_tags($podaci['prezime']));
 
