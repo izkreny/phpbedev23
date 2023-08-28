@@ -49,7 +49,8 @@
             // https://www.php.net/manual/en/function.bin2hex
             $podaci['token'] = bin2hex(random_bytes(10));
 
-
+            // https://www.php.net/manual/en/function.htmlspecialchars
+            // https://www.php.net/manual/en/function.strip-tags
             $podaci['ime'] = htmlspecialchars(strip_tags($podaci['ime']));
             $podaci['prezime'] = htmlspecialchars(strip_tags($podaci['prezime']));
 
