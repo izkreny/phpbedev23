@@ -15,4 +15,11 @@
                 </form>
             ';
         }
+
+        public function prikaziPoruke($poruke)
+        {
+            foreach ($poruke as $poruka) {
+                echo '<h3 style="color: red;">' . $poruka . '</h3>';
+            }
+        }
     }
