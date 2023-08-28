@@ -42,18 +42,6 @@
 
         public function dodajKorisnika($podaci)
         {
-            // https://www.php.net/manual/en/function.password-hash.php
-            $podaci['lozinka'] = password_hash($podaci['lozinka'], PASSWORD_DEFAULT);
-
-            // https://www.php.net/manual/en/function.random-bytes.php
-            // https://www.php.net/manual/en/function.bin2hex
-            $podaci['token'] = bin2hex(random_bytes(10));
-
-            // https://www.php.net/manual/en/function.htmlspecialchars
-            // https://www.php.net/manual/en/function.strip-tags
-            $podaci['ime'] = htmlspecialchars(strip_tags($podaci['ime']));
-            $podaci['prezime'] = htmlspecialchars(strip_tags($podaci['prezime']));
-
             $querry = "
                 INSERT INTO {$this->table}
                 (ime, prezime, email, lozinka, token)

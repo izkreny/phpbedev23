@@ -78,6 +78,18 @@
                 and $this->provjeriEmailFormat($email)
                 and $this->provjeriLozinke($lozinka, $ponovljena_lozinka) 
             ) {
+                // https://www.php.net/manual/en/function.password-hash.php
+                $podaci['lozinka'] = password_hash($podaci['lozinka'], PASSWORD_DEFAULT);
+
+                // https://www.php.net/manual/en/function.random-bytes.php
+                // https://www.php.net/manual/en/function.bin2hex
+                $podaci['token'] = bin2hex(random_bytes(10));
+
+                // https://www.php.net/manual/en/function.htmlspecialchars
+                // https://www.php.net/manual/en/function.strip-tags
+                $podaci['ime'] = htmlspecialchars(strip_tags($podaci['ime']));
+                $podaci['prezime'] = htmlspecialchars(strip_tags($podaci['prezime']));
+
                 unset($podaci['ponovljena_lozinka']);
                 
                 if ($this->model->dodajKorisnika($podaci)) {
