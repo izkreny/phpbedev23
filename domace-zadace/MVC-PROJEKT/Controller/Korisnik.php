@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'KorisnikModel.php';
-    include_once 'Registracija.php';
+    include_once '../Model/Korisnik.php';
+    include_once '../View/Registracija.php';
 
     class KorisnikController
     {
@@ -81,7 +81,7 @@
 
                 // https://www.php.net/manual/en/function.random-bytes.php
                 // https://www.php.net/manual/en/function.bin2hex
-                $podaci['token'] = bin2hex(random_bytes(10));
+                $podaci['token'] = bin2hex(random_bytes(8));
 
                 // https://www.php.net/manual/en/function.htmlspecialchars
                 // https://www.php.net/manual/en/function.strip-tags
