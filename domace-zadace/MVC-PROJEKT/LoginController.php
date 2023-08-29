@@ -33,8 +33,6 @@
             if ($this->model->postojiLi($email, 'email')) {
                 return true;
             } else {
-                $this->poruke[] = "Email NE postoji u sustavu!";
-
                 return false;
             }
         }
@@ -47,6 +45,8 @@
                 } else {
                     $this->poruke[] = "Korisnik NIJE uspješno prijavljen u sustav!";
                 }
+            } else {
+                $this->poruke[] = "Korisnik NE postoji u sustavu!";
             }
         }
     }
