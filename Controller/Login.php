@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'KorisnikModel.php';
-    include_once 'Login.php';
+    include_once '../Model/Korisnik.php';
+    include_once '../View/Login.php';
 
     class LoginController
     {

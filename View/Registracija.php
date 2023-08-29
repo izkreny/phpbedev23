@@ -5,7 +5,7 @@
         public function prikaziFormu()
         {
             echo '
-                <form action="KorisnikController.php" method="post">
+                <form action="" method="post">
                     Ime: <input type="text" name="ime" required><br>
                     Prezime: <input type="text" name="prezime" required><br>
                     Email: <input type="text" name="email" required><br>

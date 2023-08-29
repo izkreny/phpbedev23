@@ -5,7 +5,7 @@
         public function prikaziFormu()
         {
             echo '
-                <form action="LoginController.php" method="post">
+                <form action="" method="post">
                     Email: <input type="email" name="email" required><br>
                     Lozinka: <input type="password" name="lozinka" required><br>
                     <input type="submit" value="PRIJAVI ME!">

@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'Database.php';
+    include_once '../Database/Database.php';
 
     class KorisnikModel
     {
