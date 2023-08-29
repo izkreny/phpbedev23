@@ -26,6 +26,18 @@
             }
         }
 
+        public function dohvatiLozinku($email)
+        {
+            $querry = "SELECT lozinka FROM {$this->table} WHERE email = :email";
+            $stmt = $this->conn->prepare($querry);
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt->execute();
+            $lozinka = $stmt->fetch();
+            // var_dump($lozinka);
+
+            return $lozinka['lozinka'];
+        }
+
         public function aktivirajKorisnika($token)
         {
             $querry = "UPDATE {$this->table} SET status = 1, token = '' WHERE token = ?";

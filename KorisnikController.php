@@ -71,12 +71,10 @@
 
         public function obradiRegistraciju($podaci)
         {
-            // https://www.php.net/manual/en/function.extract.php
-            extract($podaci);
             if (
-                $this->provjeriEmail($email)
-                and $this->provjeriEmailFormat($email)
-                and $this->provjeriLozinke($lozinka, $ponovljena_lozinka) 
+                $this->provjeriEmail($podaci['email'])
+                and $this->provjeriEmailFormat($podaci['email'])
+                and $this->provjeriLozinke($podaci['lozinka'], $podaci['ponovljena_lozinka']) 
             ) {
                 // https://www.php.net/manual/en/function.password-hash.php
                 $podaci['lozinka'] = password_hash($podaci['lozinka'], PASSWORD_DEFAULT);
