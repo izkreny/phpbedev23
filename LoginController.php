@@ -42,10 +42,6 @@
         public function obradiLogin($podaci)
         {
             if ($this->provjeriEmail($podaci['email'])) { // TODO: Provjeriti i je li korisnik AKTIVIRAN!!!
-                // https://www.php.net/manual/en/function.password-hash.php
-                $podaci['lozinka'] = password_hash($podaci['lozinka'], PASSWORD_DEFAULT);
-
-                var_dump($this->model->dohvatiLozinku($podaci['email'])); 
                 if (password_verify($podaci['lozinka'], $this->model->dohvatiLozinku($podaci['email']))) {
                     $this->poruke[] = "Korisnik je uspješno prijavljen u sustav!";
                 } else {
