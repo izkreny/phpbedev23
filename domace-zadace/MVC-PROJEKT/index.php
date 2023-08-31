@@ -11,4 +11,5 @@
     
     $querry = 'SELECT * FROM korisnici';
     $stmt = $conn->prepare($querry);
-    var_dump($stmt->execute());
+    $stmt->execute();
+    var_dump($stmt->fetchAll(PDO::FETCH_ASSOC));
