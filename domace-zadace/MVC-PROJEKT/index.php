@@ -8,8 +8,4 @@
     $database = Database::getInstance();
     $conn = $database->connect($mysqlConfig->getPdoDnsForDatabase('korisnici_db'));
 
-    
-    $querry = 'SELECT * FROM korisnici';
-    $stmt = $conn->prepare($querry);
-    $stmt->execute();
-    var_dump($stmt->fetchAll(PDO::FETCH_ASSOC));
+    var_dump($conn->query('SELECT * FROM korisnici')->fetchAll(PDO::FETCH_ASSOC));
