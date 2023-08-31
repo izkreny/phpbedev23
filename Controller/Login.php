@@ -2,6 +2,7 @@
 
     include_once '../Model/Korisnik.php';
     include_once '../View/Login.php';
+    include_once '../Config.php';
 
     class LoginController
     {
@@ -11,8 +12,9 @@
 
         public function __construct()
         {
-            $database = new Database('korisnici_db');
-            $this->model = new KorisnikModel($database->connect());
+            $mysqlConfig = new Config('/var/www/config/mysql.ini');
+            $database = Database::getInstance();
+            $this->model = new KorisnikModel($database->connect($mysqlConfig->getPdoDnsForDatabase('korisnici_db')));
             $this->view = new Login();
         }
 
