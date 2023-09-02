@@ -2,7 +2,7 @@
 
     class Database
     {
-        private static $instance;
+        private static $instance = null;
         private $conn;
 
         private function __construct()
@@ -20,7 +20,7 @@
 
         public function connect($dsn)
         {
-            $this->conn = NULL;
+            $this->conn = null;
 
             try {
                 $this->conn = new PDO($dsn);
