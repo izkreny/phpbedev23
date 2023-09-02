@@ -10,7 +10,7 @@
             $this->config = parse_ini_file($file);
         }
 
-        public function getPdoDnsForDatabase($database)
+        public function getPdoDsnForDatabase($database)
         {
             // https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.pdo
             $dsn = "mysql:" . http_build_query($this->config, '', ';') . ";dbname={$database}";

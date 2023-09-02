@@ -6,6 +6,6 @@
 
     $mysqlConfig = new Config('/var/www/config/mysql.ini');
     $database = Database::getInstance();
-    $conn = $database->connect($mysqlConfig->getPdoDnsForDatabase('korisnici_db'));
+    $conn = $database->connect($mysqlConfig->getPdoDsnForDatabase('korisnici_db'));
 
     var_dump($conn->query('SELECT * FROM korisnici')->fetchAll(PDO::FETCH_ASSOC));

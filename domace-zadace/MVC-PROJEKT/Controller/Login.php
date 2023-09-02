@@ -14,7 +14,7 @@
         {
             $mysqlConfig = new Config('/var/www/config/mysql.ini');
             $database = Database::getInstance();
-            $this->model = new KorisnikModel($database->connect($mysqlConfig->getPdoDnsForDatabase('korisnici_db')));
+            $this->model = new KorisnikModel($database->connect($mysqlConfig->getPdoDsnForDatabase('korisnici_db')));
             $this->view = new Login();
         }
 
