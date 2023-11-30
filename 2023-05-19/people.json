@@ -1,0 +1,12 @@
+[
+  {
+    "name" : "Petar",
+    "surname" : "Perić",
+    "age" : 25
+  },
+  {
+    "name" : "Lana",
+    "surname" : "Lanić",
+    "age" : 10
+  } 
+]
