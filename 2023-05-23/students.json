@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Cruz",
+        "surname": "Williams",
+        "age": 20,
+        "email": "jenifersanders@arctiq.com",
+        "phone": "+385 (926) 573-3077"
+    },
+    {
+        "name": "Bianca",
+        "surname": "Chambers",
+        "age": 44,
+        "email": "malonebyrd@geekol.com",
+        "phone": "+385 (824) 481-2623"
+    },
+    {
+        "name": "Meagan",
+        "surname": "Ingram",
+        "age": 36,
+        "email": "sharronmccray@rodeocean.com",
+        "phone": "+385 (969) 533-2424"
+    },
+    {
+        "name": "Carissa",
+        "surname": "Singleton",
+        "age": 41,
+        "email": "gibbsmeyer@centuria.com",
+        "phone": "+385 (864) 416-2234"
+    }
+]

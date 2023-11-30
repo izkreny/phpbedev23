@@ -1,0 +1,12 @@
+https://json-generator.com/
+
+[
+  '{{repeat(4)}}',
+  {
+    name: '{{firstName()}}',
+    surname: '{{surname()}}',
+    age: '{{integer(20, 50)}}',
+    email: '{{email([random])}}',
+    phone: '+385 {{phone()}}'
+  }
+]
