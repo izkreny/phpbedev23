@@ -1,5 +1,7 @@
 <?php
 
+namespace Abstraction;
+
 // Abstraction and Constructor
 abstract class Shape
 {
